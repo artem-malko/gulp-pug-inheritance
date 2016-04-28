@@ -1,5 +1,6 @@
 #gulp-jade-inheritance
 [![Build Status](https://travis-ci.org/juanfran/gulp-jade-inheritance.svg?branch=master)](https://travis-ci.org/juanfran/gulp-jade-inheritance)
+[![Dependency Status](https://david-dm.org/pure180/gulp-jade-inheritance.svg)](https://david-dm.org/pure180/gulp-jade-inheritance)
 > Rebuild a jade file with other files that have extended or included those file
 
 Inspired by [jade-inheritance](https://github.com/paulyoung/jade-inheritance)
