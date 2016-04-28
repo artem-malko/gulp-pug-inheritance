@@ -22,17 +22,17 @@
   },
   "homepage": "https://github.com/juanfran/gulp-jade-inheritance",
   "devDependencies": {
-    "chai": "~3.4.1",
-    "mocha": "~2.3.4",
-    "proxyquire": "^1.7.3",
-    "sinon": "^1.17.2"
+    "chai": "~3.5.0",
+    "mocha": "~2.4.5",
+    "proxyquire": "^1.7.4",
+    "sinon": "^1.17.3"
   },
   "dependencies": {
     "event-stream": "^3.3.2",
     "gulp-util": "^3.0.7",
     "jade-inheritance": "^0.2.1",
-    "lodash": "^3.10.1",
-    "through2": "^2.0.0",
-    "vinyl-fs": "^2.2.1"
+    "lodash": "^4.11.1",
+    "through2": "^2.0.1",
+    "vinyl-fs": "^2.4.3"
   }
 }
