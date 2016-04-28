@@ -31,7 +31,7 @@
     "event-stream": "^3.3.2",
     "gulp-util": "^3.0.7",
     "jade-inheritance": "^0.2.1",
-    "pug-inheritance" : "^1.0.1"
+    "pug-inheritance" : "^1.0.1",
     "lodash": "^4.11.1",
     "through2": "^2.0.1",
     "vinyl-fs": "^2.4.3"
