@@ -1,6 +1,6 @@
 {
   "name": "gulp-pug-inheritance",
-  "version": "0.5.5",
+  "version": "0.0.1",
   "description": "Rebuild only changed jade files and all it dependencies",
   "main": "index.js",
   "scripts": {
@@ -8,19 +8,24 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:juanfran/gulp-pug-inheritance.git"
+    "url": "git@github.com:pure180/gulp-pug-inheritance.git"
   },
   "keywords": [
     "gulpplugin",
     "jade",
-    "jade-inheritance"
+    "pug",
+    "jade-inheritance",
+    "pug-inheritance"
   ],
   "author": "Juanfran Alcántara",
+  "maintainers" : [
+    "Daniel Pfisterer <info@daniel-pfisterer.de>"
+  ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/juanfran/gulp-pug-inheritance/issues"
+    "url": "https://github.com/juanfran/gulp-jade-inheritance/issues"
   },
-  "homepage": "https://github.com/juanfran/gulp-pug-inheritance",
+  "homepage": "https://github.com/pure180/gulp-pug-inheritance",
   "devDependencies": {
     "chai": "~3.5.0",
     "mocha": "~2.4.5",
