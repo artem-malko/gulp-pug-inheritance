@@ -87,7 +87,7 @@ If you want to prevent partials from being processed, mark them with an undersco
 To install all that's need for it:
 
 ```shell
-npm install gulp-pug-inheritance gulp-jade gulp-changed gulp-cached gulp-if gulp-filter --save-dev
+npm install gulp-pug-inheritance gulp-pug gulp-changed gulp-cached gulp-if gulp-filter --save-dev
 ```
 
 ### jade >= 1.11
