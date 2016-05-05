@@ -1,5 +1,8 @@
-#gulp-jade-inheritance
-[![Build Status](https://travis-ci.org/juanfran/gulp-jade-inheritance.svg?branch=master)](https://travis-ci.org/juanfran/gulp-jade-inheritance)
+This is fork of [Juanfran's](https://github.com/juanfran) [gulp-jade-inheritance](https://github.com/juanfran/gulp-jade-inheritance) gulp-plugin migrated to new Pug parser (former Jade).
+
+---
+#gulp-pug-inheritance
+[![Build Status](https://travis-ci.org/pure180/gulp-pug-inheritance.svg?branch=master)](https://travis-ci.org/pure180/gulp-pug-inheritance)
 [![Dependency Status](https://david-dm.org/pure180/gulp-jade-inheritance.svg)](https://david-dm.org/pure180/gulp-jade-inheritance)
 > Rebuild a jade file with other files that have extended or included those file
 
@@ -8,19 +11,19 @@ Inspired by [jade-inheritance](https://github.com/paulyoung/jade-inheritance)
 ## Install
 
 ```shell
-npm install gulp-jade-inheritance --save-dev
+npm install gulp-pug-inheritance --save-dev
 ```
 
 ## Usage
 
 `gulpfile.js`
 ```js
-var jadeInheritance = require('gulp-jade-inheritance');
-var jade = require('gulp-jade');
+var pugInheritance = require('gulp-pug-inheritance');
+var jade = require('gulp-pug');
 
 gulp.task('jade-inheritance', function() {
   gulp.src('/jade/example.jade')
-    .pipe(jadeInheritance({basedir: '/jade/'}))
+    .pipe(pugInheritance({basedir: '/jade/'}))
     .pipe(jade());
 });
 ```
@@ -29,12 +32,12 @@ In this example jade compile `example.jade` and all other files that have been e
 
 ### Only process changed files
 
-You can use `gulp-jade-inheritance` with `gulp-changed` and `gulp-cached` to only process the files that have changed. This also prevent partials from being processed separately by marking them with an underscore before their name.
+You can use `gulp-pug-inheritance` with `gulp-changed` and `gulp-cached` to only process the files that have changed. This also prevent partials from being processed separately by marking them with an underscore before their name.
 
 ```js
 'use strict';
 var gulp = require('gulp');
-var jadeInheritance = require('gulp-jade-inheritance');
+var pugInheritance = require('gulp-pug-inheritance');
 var jade = require('gulp-jade');
 var changed = require('gulp-changed');
 var cached = require('gulp-cached');
@@ -51,7 +54,7 @@ gulp.task('jade', function() {
         .pipe(gulpif(global.isWatching, cached('jade')))
 
         //find files that depend on the files that have changed
-        .pipe(jadeInheritance({basedir: 'app'}))
+        .pipe(pugInheritance({basedir: 'app'}))
 
         //filter out partials (folders and files starting with "_" )
         .pipe(filter(function (file) {
@@ -84,10 +87,9 @@ If you want to prevent partials from being processed, mark them with an undersco
 To install all that's need for it:
 
 ```shell
-npm install gulp-jade-inheritance gulp-jade gulp-changed gulp-cached gulp-if gulp-filter --save-dev
+npm install gulp-pug-inheritance gulp-jade gulp-changed gulp-cached gulp-if gulp-filter --save-dev
 ```
 
 ### jade >= 1.11
 
 if your using jade 1.11 add `"jade": "^1.11.0"` to your `package.json` to overwrite the jade-inheritance version. [Issue](https://github.com/paulyoung/jade-inheritance/issues/15)
-
