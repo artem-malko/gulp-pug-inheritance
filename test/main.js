@@ -18,7 +18,7 @@ var getFixtureFile = function (path) {
   });
 }
 
-describe('gulp-jade-inheritance', function(done) {
+describe('gulp-pug-inheritance', function(done) {
   it('jade with parents', function(done) {
     var fixture = getFixtureFile('fixture1.jade')
 

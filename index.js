@@ -5,13 +5,13 @@ var _ = require("lodash");
 var vfs = require('vinyl-fs');
 var through2 = require('through2');
 var gutil = require('gulp-util');
-var JadeInheritance = require('jade-inheritance');
-var PLUGIN_NAME = 'gulp-jade-inheritance';
+var PugInheritance = require('pug-inheritance');
+var PLUGIN_NAME = 'gulp-pug-inheritance';
 
 var stream;
 var errors = {};
 
-function gulpJadeInheritance(options) {
+function gulpPugInheritance(options) {
   options = options || {};
 
   var files = [];
@@ -24,14 +24,15 @@ function gulpJadeInheritance(options) {
 
   function endStream() {
     if (files.length) {
-      var jadeInheritanceFiles = [];
+      var pugInheritanceFiles = [];
       var filesPaths = [];
 
       options = _.defaults(options, {'basedir': process.cwd()});
 
       _.forEach(files, function(file) {
         try {
-          var jadeInheritance = new JadeInheritance(file.path, options.basedir, options);
+          var pugInheritance = new PugInheritance(file.path, options.basedir, options);
+
         } catch (e) {
           // prevent multiple errors on the same file
           var alreadyShown;
@@ -53,7 +54,7 @@ function gulpJadeInheritance(options) {
           return;
         }
 
-        var fullpaths = _.map(jadeInheritance.files, function (file) {
+        var fullpaths = _.map(pugInheritance.files, function (file) {
           return options.basedir + "/" +  file;
         });
 
@@ -83,4 +84,4 @@ function gulpJadeInheritance(options) {
   return stream;
 };
 
-module.exports = gulpJadeInheritance;
+module.exports = gulpPugInheritance;

@@ -1,5 +1,5 @@
 {
-  "name": "gulp-jade-inheritance",
+  "name": "gulp-pug-inheritance",
   "version": "0.5.5",
   "description": "Rebuild only changed jade files and all it dependencies",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:juanfran/gulp-jade-inheritance.git"
+    "url": "git@github.com:juanfran/gulp-pug-inheritance.git"
   },
   "keywords": [
     "gulpplugin",
@@ -18,22 +18,25 @@
   "author": "Juanfran Alcántara",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/juanfran/gulp-jade-inheritance/issues"
+    "url": "https://github.com/juanfran/gulp-pug-inheritance/issues"
   },
-  "homepage": "https://github.com/juanfran/gulp-jade-inheritance",
+  "homepage": "https://github.com/juanfran/gulp-pug-inheritance",
   "devDependencies": {
     "chai": "~3.5.0",
     "mocha": "~2.4.5",
+    "path": "^0.12.7",
     "proxyquire": "^1.7.4",
     "sinon": "^1.17.3"
   },
   "dependencies": {
     "event-stream": "^3.3.2",
     "gulp-util": "^3.0.7",
-    "jade-inheritance": "^0.2.1",
-    "pug-inheritance" : "^1.0.1",
+    "pug-inheritance": "^1.1.1",
     "lodash": "^4.11.1",
     "through2": "^2.0.1",
     "vinyl-fs": "^2.4.3"
-  }
+  },
+  "skipInheritances": [
+    "node_modules"
+  ]
 }
