@@ -1,6 +1,7 @@
 var pluginPath = '../index';
 var plugin = require(pluginPath);
 var chai = require('chai');
+var path = require('path');
 var expect = chai.expect;
 var gutil = require('gulp-util');
 var fs = require('fs');
@@ -23,9 +24,9 @@ describe('gulp-pug-inheritance', function(done) {
     var fixture = getFixtureFile('fixture1.jade')
 
     var fileNames = [
-      'test/fixtures/fixture1.jade',
-      'test/fixtures/fixture2.jade',
-      'test/fixtures/fixture3.jade'
+      path.join('test', 'fixtures', 'fixture1.jade'),
+      path.join('test', 'fixtures', 'fixture2.jade'),
+      path.join('test', 'fixtures', 'fixture3.jade'),
     ];
 
     var files = [];
