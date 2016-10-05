@@ -8,12 +8,12 @@ var gutil = require('gulp-util');
 var PugInheritance = require('pug-inheritance');
 var PLUGIN_NAME = 'gulp-pug-inheritance';
 
-var stream;
-var errors = {};
 
 function gulpPugInheritance(options) {
   options = options || {};
 
+  var stream;
+  var errors = {};
   var files = [];
 
   function writeStream(currentFile) {
@@ -27,7 +27,7 @@ function gulpPugInheritance(options) {
       var pugInheritanceFiles = [];
       var filesPaths = [];
 
-      options = _.defaults(options, {'basedir': process.cwd()});
+      options = _.defaults(options, {'basedir': process.cwd(), 'extension': '.pug'});
 
       _.forEach(files, function(file) {
         try {
