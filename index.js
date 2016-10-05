@@ -27,7 +27,7 @@ function gulpPugInheritance(options) {
       var pugInheritanceFiles = [];
       var filesPaths = [];
 
-      options = _.defaults(options, {'basedir': process.cwd(), 'extension': '.pug'});
+      options = _.defaults(options, {'basedir': process.cwd()});
 
       _.forEach(files, function(file) {
         try {

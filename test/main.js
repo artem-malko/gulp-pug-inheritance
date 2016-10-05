@@ -31,7 +31,7 @@ describe('gulp-pug-inheritance', function(done) {
 
     var files = [];
 
-    var stream = plugin();
+    var stream = plugin({extension: '.pug'});
     stream
       .on('data', function (file) {
         expect(fileNames).to.include(file.relative);
@@ -53,7 +53,7 @@ describe('gulp-pug-inheritance', function(done) {
 
     var files = [];
 
-    var stream = plugin();
+    var stream = plugin({extension: '.pug'});
     stream
       .on('data', function (file) {
         files.push(file);
@@ -73,7 +73,7 @@ describe('gulp-pug-inheritance', function(done) {
 
     var files = [];
 
-    var stream = plugin();
+    var stream = plugin({extension: '.pug'});
     stream
       .on('data', function (file) {
         files.push(file);
@@ -94,7 +94,7 @@ describe('gulp-pug-inheritance', function(done) {
 
       var files = [];
 
-      var stream = plugin({basedir: 'test/fixtures5'});
+      var stream = plugin({basedir: 'test/fixtures5', extension: '.pug'});
       stream
         .on('data', function (file) {
           files.push(file);
@@ -114,7 +114,7 @@ describe('gulp-pug-inheritance', function(done) {
 
       var files = [];
 
-      var stream = plugin({basedir: 'test/fixtures'});
+      var stream = plugin({basedir: 'test/fixtures', extension: '.pug'});
       stream
         .on('data', function (file) {
           files.push(file);
@@ -135,7 +135,7 @@ describe('gulp-pug-inheritance', function(done) {
 
     var files = [];
 
-    var stream = plugin({basedir: 'test/fixtures'});
+    var stream = plugin({basedir: 'test/fixtures', extension: '.pug'});
     stream
       .on('data', function (file) {
         expect(file.base).to.be.eql('test/fixtures');
