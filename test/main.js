@@ -20,18 +20,18 @@ var getFixtureFile = function (path) {
 }
 
 describe('gulp-pug-inheritance', function(done) {
-  it('jade with parents', function(done) {
-    var fixture = getFixtureFile('fixture1.jade')
+  it('pug with parents', function(done) {
+    var fixture = getFixtureFile('fixture1.pug')
 
     var fileNames = [
-      path.join('test', 'fixtures', 'fixture1.jade'),
-      path.join('test', 'fixtures', 'fixture2.jade'),
-      path.join('test', 'fixtures', 'fixture3.jade'),
+      path.join('test', 'fixtures', 'fixture1.pug'),
+      path.join('test', 'fixtures', 'fixture2.pug'),
+      path.join('test', 'fixtures', 'fixture3.pug'),
     ];
 
     var files = [];
 
-    var stream = plugin();
+    var stream = plugin({extension: '.pug'});
     stream
       .on('data', function (file) {
         expect(fileNames).to.include(file.relative);
@@ -48,12 +48,12 @@ describe('gulp-pug-inheritance', function(done) {
     stream.end();
   });
 
-  it('jade without parents', function(done) {
-    var fixture = getFixtureFile('fixture4.jade')
+  it('pug without parents', function(done) {
+    var fixture = getFixtureFile('fixture4.pug')
 
     var files = [];
 
-    var stream = plugin();
+    var stream = plugin({extension: '.pug'});
     stream
       .on('data', function (file) {
         files.push(file);
@@ -68,12 +68,12 @@ describe('gulp-pug-inheritance', function(done) {
     stream.end();
   });
 
-  it('empty jade', function(done) {
-    var fixture = getFixtureFile('fixture5.jade')
+  it('empty pug', function(done) {
+    var fixture = getFixtureFile('fixture5.pug')
 
     var files = [];
 
-    var stream = plugin();
+    var stream = plugin({extension: '.pug'});
     stream
       .on('data', function (file) {
         files.push(file);
@@ -90,11 +90,11 @@ describe('gulp-pug-inheritance', function(done) {
 
   describe('custom basedir', function(done) {
     it('wrong path', function(done) {
-      var fixture = getFixtureFile('fixture1.jade')
+      var fixture = getFixtureFile('fixture1.pug')
 
       var files = [];
 
-      var stream = plugin({basedir: 'test/fixtures5'});
+      var stream = plugin({basedir: 'test/fixtures5', extension: '.pug'});
       stream
         .on('data', function (file) {
           files.push(file);
@@ -110,11 +110,11 @@ describe('gulp-pug-inheritance', function(done) {
     });
 
     it('valid path', function(done) {
-      var fixture = getFixtureFile('fixture1.jade')
+      var fixture = getFixtureFile('fixture1.pug')
 
       var files = [];
 
-      var stream = plugin({basedir: 'test/fixtures'});
+      var stream = plugin({basedir: 'test/fixtures', extension: '.pug'});
       stream
         .on('data', function (file) {
           files.push(file);
@@ -130,12 +130,12 @@ describe('gulp-pug-inheritance', function(done) {
     });
   });
 
-  it('subfolder jade', function(done) {
-    var fixture = getFixtureFile('subfolder/fixture5.jade')
+  it('subfolder pug', function(done) {
+    var fixture = getFixtureFile('subfolder/fixture5.pug')
 
     var files = [];
 
-    var stream = plugin({basedir: 'test/fixtures'});
+    var stream = plugin({basedir: 'test/fixtures', extension: '.pug'});
     stream
       .on('data', function (file) {
         expect(file.base).to.be.eql('test/fixtures');
