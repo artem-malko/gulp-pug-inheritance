@@ -17,11 +17,11 @@ var getFixtureFile = function (path) {
     base: './test/fixtures/',
     contents: fs.readFileSync('./test/fixtures/' + path)
   });
-}
+};
 
 describe('gulp-pug-inheritance', function(done) {
   it('pug with parents', function(done) {
-    var fixture = getFixtureFile('fixture1.pug')
+    var fixture = getFixtureFile('fixture1.pug');
 
     var fileNames = [
       path.join('test', 'fixtures', 'fixture1.pug'),
@@ -49,7 +49,7 @@ describe('gulp-pug-inheritance', function(done) {
   });
 
   it('pug without parents', function(done) {
-    var fixture = getFixtureFile('fixture4.pug')
+    var fixture = getFixtureFile('fixture4.pug');
 
     var files = [];
 
@@ -69,7 +69,7 @@ describe('gulp-pug-inheritance', function(done) {
   });
 
   it('empty pug', function(done) {
-    var fixture = getFixtureFile('fixture5.pug')
+    var fixture = getFixtureFile('fixture5.pug');
 
     var files = [];
 
@@ -90,7 +90,7 @@ describe('gulp-pug-inheritance', function(done) {
 
   describe('custom basedir', function(done) {
     it('wrong path', function(done) {
-      var fixture = getFixtureFile('fixture1.pug')
+      var fixture = getFixtureFile('fixture1.pug');
 
       var files = [];
 
@@ -110,7 +110,7 @@ describe('gulp-pug-inheritance', function(done) {
     });
 
     it('valid path', function(done) {
-      var fixture = getFixtureFile('fixture1.pug')
+      var fixture = getFixtureFile('fixture1.pug');
 
       var files = [];
 
@@ -131,7 +131,7 @@ describe('gulp-pug-inheritance', function(done) {
   });
 
   it('subfolder pug', function(done) {
-    var fixture = getFixtureFile('subfolder/fixture5.pug')
+    var fixture = getFixtureFile('subfolder/fixture5.pug');
 
     var files = [];
 
