@@ -31,7 +31,7 @@ describe('gulp-pug-inheritance', function(done) {
 
     var files = [];
 
-    var stream = plugin({extension: '.pug'});
+    var stream = plugin();
     stream
       .on('data', function (file) {
         expect(fileNames).to.include(file.relative);
