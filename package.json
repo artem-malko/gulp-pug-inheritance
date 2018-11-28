@@ -18,7 +18,7 @@
     "pug-inheritance"
   ],
   "author": "Juanfran Alcántara",
-  "maintainers" : [
+  "maintainers": [
     "Daniel Pfisterer <info@daniel-pfisterer.de>"
   ],
   "license": "MIT",
@@ -34,7 +34,7 @@
     "sinon": "^1.17.6"
   },
   "dependencies": {
-    "event-stream": "^3.3.4",
+    "event-stream": "4.0.1",
     "gulp-util": "^3.0.7",
     "pug-inheritance": "https://github.com/artem-malko/pug-inheritance/archive/master.tar.gz",
     "lodash": "^4.16.4",
